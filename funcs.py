@@ -30,3 +30,16 @@ def wblstats(mu, sigma, inputtype=None):
         c = mu; scale=sigma
         mean,var = stats.weibull_min.stats(c, scale=scale)
         return [mean, np.sqrt(var)]
+
+
+def gblstats(mu, sigma, inputtype=None):
+    """gumbel_r for maximum value (e.g. load effects)"""
+    if inputtype is None:
+        scale = np.sqrt(6)*sigma/np.pi
+        loc = mu-scale*np.euler_gamma
+        return [loc, scale]
+    elif inputtupe == 'gbl':
+        loc = mu; scale=sigma
+        mean = loc+scale*np.euler_gamma
+        std = np.pi*scale/np.sqrt(6)
+        return [mean, std]
