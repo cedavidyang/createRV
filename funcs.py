@@ -48,6 +48,7 @@ def gblstats(mu, sigma, inputtype=None):
 def gammastats(mu, sigma, inputtype=None):
     """gamma distribution"""
     if inputtype is None:
+        mean_ = mu; std_ = sigma
         scale = std_**2/mean_
         a = mean_ / scale
         return [a, scale]
