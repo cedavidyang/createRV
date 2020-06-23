@@ -43,3 +43,17 @@ def gblstats(mu, sigma, inputtype=None):
         mean = loc+scale*np.euler_gamma
         std = np.pi*scale/np.sqrt(6)
         return [mean, std]
+
+
+def gammastats(mu, sigma, inputtype=None):
+    """gamma distribution"""
+    if inputtype is None:
+        scale = std_**2/mean_
+        a = mean_ / scale
+        return [a, scale]
+    elif inputtupe == 'gamma_scale':
+        a = mu; scale=sigma
+        mean_ = a*scale
+        std_ = np.sqrt(a*scale**2)
+        return [mean_, std_]
+
